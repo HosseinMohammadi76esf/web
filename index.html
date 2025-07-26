@@ -1,90 +1,191 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>گروه تولیدی دنیای توپ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>گروه تولیدی دنیای توپ | فروش عمده و خرده توپ بادی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --accent-color: #f45c43;
+            --text-color: #333;
+            --white: #fff;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
         body {
-            font-family: Tahoma, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
             padding: 20px;
-            text-align: center;
-            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            background: url('https://images.unsplash.com/photo-1614632537197-38a17061d8e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            position: relative;
         }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        
         .container {
-            max-width: 380px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 30px 20px;
+            max-width: 500px;
+            width: 100%;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
+        
         img.logo {
-            width: 140px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            margin-bottom: 8px;
-            font-size: 24px;
-            color: #000;
-        }
-        .board-text {
-            font-size: 16px;
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
             margin-bottom: 25px;
-            line-height: 1.4;
-            color: #555;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(78, 84, 200, 0.3);
+            transition: transform 0.3s ease;
         }
+        
+        img.logo:hover {
+            transform: scale(1.05);
+        }
+        
+        h1 {
+            margin-bottom: 15px;
+            font-size: 28px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .board-text {
+            font-size: 17px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #555;
+            padding: 0 10px;
+        }
+        
         .contact {
             font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #222;
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            background: linear-gradient(to right, #f5f5f5, #e9e9e9);
+            padding: 12px;
+            border-radius: 10px;
+            display: inline-block;
         }
+        
+        .contact a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact a:hover {
+            color: var(--accent-color);
+        }
+        
         .links {
             display: flex;
             justify-content: center;
-            gap: 24px;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
+        
         .links a {
             text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 15px;
+            padding: 14px 25px;
+            border-radius: 12px;
+            font-size: 16px;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             color: white;
-            display: inline-block;
-            min-width: 120px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            gap: 8px;
         }
+        
         .telegram {
-            background-color: #0088cc;
+            background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
         }
+        
         .telegram:hover {
-            background-color: #006699;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 136, 204, 0.3);
         }
+        
         .eitaa {
-            background-color: #f04e23;
+            background: linear-gradient(135deg, #f04e23 0%, #d03a12 100%);
         }
+        
         .eitaa:hover {
-            background-color: #ba3a1a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(240, 78, 35, 0.3);
+        }
+        
+        .social-icon {
+            font-size: 18px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                max-width: 90%;
+            }
+            
+            .links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .links a {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container" dir="rtl">
-        <img class="logo" src="./logo.jpg" alt="https://freeimage.host/i/FjWjU8J" />
+    <div class="container">
+        <img class="logo" src="./logo.jpg" alt="لوگو دنیای توپ | تولید کننده توپ بادی" />
         <h1>تولیدی دنیای توپ</h1>
         <p class="board-text">
             فروش و پخش انواع توپ بادی بصورت خرد و عمده<br />
             ارسال مستقیم از قلب شهر اصفهان به سراسر کشور
         </p>
-        <div class="contact">تماس: فرهادی 09965656887</div>
+        <div class="contact">
+            <a href="tel:+989965656887">تماس: فرهادی ۰۹۹۶۵۶۵۶۸۸۷</a>
+        </div>
         <div class="links">
-            <a class="telegram" href="https://t.me/donya_ball" target="_blank" rel="noopener noreferrer">کانال تلگرام</a>
-            <a class="eitaa" href="https://eitaa.com/ball_world_iran" target="_blank" rel="noopener noreferrer">کانال ایتا</a>
+            <a class="telegram" href="https://t.me/donya_ball" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram social-icon"></i>
+                کانال تلگرام
+            </a>
+            <a class="eitaa" href="https://eitaa.com/ball_world_iran" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-paper-plane social-icon"></i>
+                کانال ایتا
+            </a>
         </div>
     </div>
 </body>
